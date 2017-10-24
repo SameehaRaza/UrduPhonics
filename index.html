@@ -44,7 +44,6 @@ function handleTouchMove(evt) {
 	if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {
 		if ( xDiff > minDelta ) {
 			/* left swipe */
-			document.getElementById('info').appendChild(document.createTextNode('Left! '));
 			doTouchBreak = true;
 		} else if ( xDiff < -minDelta) {
 			/* right swipe */
