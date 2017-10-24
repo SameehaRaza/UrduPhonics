@@ -43,12 +43,12 @@ function handleTouchMove(evt) {
 	// horizontal swipe
 	if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {
 		if ( xDiff > minDelta ) {
-			document.getElementById('info').appendChild(document.createTextNode('Left! '));
-			doTouchBreak = true;
+			
 			/* left swipe */
 			doTouchBreak = true;
 		} else if ( xDiff < -minDelta) {
-			
+			document.getElementById('info').appendChild(document.createTextNode('Left! '));
+			doTouchBreak = true;
 			/* right swipe */
 			document.getElementById('info').appendChild(document.createTextNode('Right! '));
 			doTouchBreak = true;
