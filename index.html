@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Urdu Phonics | ا ب پ</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!-- Optional Bootstrap theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    
+    <style>
+        
+        body{
+            
+            background-color: white;
+        }
+        
+        
+        
+        .mynone{
+            
+          display: none;
+        }
+    
+        .navbar-my{
+            
+            background-color: #E5810A;
+        }
+        
+        .color {
+            
+            color: black;
+        }
+    
+        .bg-color {
+            
+            border-color:black;
+        }
+        
+        .black{
+          
+            background-color: black;
+            
+        }
+    
+        
+        #alif {
+        
+            width:100px;
+            height: 100px;
+            text-align: center;
+            font-size: 600%;
+            border: 1px solid black;
+            background-color:ghostwhite;
+            border-radius: 50px;
+            position: relative;
+            left:70px;
+            
+        }
+        
+        
+        
+        #anar{
+            
+            width: 100px;
+            height: 100px;
+            position: relative;
+            top:35px;
+            right: 70px;
+            
+        }
+        
+        #angoor{
+            
+            width: 80px;
+            height: 80px;
+            position: relative;
+            left:150px;
+            bottom: 50px;
+        }
+        
+        #right {
+            position: relative;
+            left:5px;
+            bottom: 40px;
+        }
+        
+      
+        #icon{
+            
+            position: relative;
+            bottom: 100px;
+            left: 180px;
+            
+    }    
+        
+        .nea:hover {
+            animation: ;
+        }
+        
+        .nea {
+            width=30px;
+            height:30px;
+            position:relative; 
+            left:210px; 
+            bottom:50px;
+        }
+        
+        
+    </style>
+</head>
+<body data-spy="scroll" data-target=".navbar-collapse">
+
+<div class="navbar navbar-my">
+<div class="container">
+
+<div class="navbar-header">
+
+<a href="URDUAPP.html" class="navbar-brand color">Urdu Phonics</a>
+
+<button  type="button" class="navbar-toggle bg-color" data-toggle="collapse" data-target=".navbar-collapse">
+
+<span class="sr-only">Toggle navigation</span>
+
+  <span class="icon-bar black"></span>
+  <span class="icon-bar black"></span>
+  <span class="icon-bar black"></span>
+
+</button>
+
+    </div>
+    
+    
+    
+
+<div class="collapse navbar-collapse">
+
+  <ul class="nav navbar-nav">
+
+<li class="active"><a href="URDUAPP.html" class="color">Home</a></li>
+<li><a href="learn.html" class="color">Learn</a></li>      
+<li><a href="play.html" class="color">Play</a></li>      
+<li><a href="test.html" class="color">Guess!</a></li>      
+
+
+    </ul>
+    
+    
+
+    </div>
+
+  </div>
+
+</div>
+    
+  <div class="container">
+    
+    
+      <h1 id="alif">ا</h1>
+      
+      <a href=""><img class="nea" src="leftarrow.PNG" /> </a>
+      
+      <a id="hoverme"><img src="speaker.png" id="icon"/></a>
+    
+    <img id="anar" src="anar.png"/>  
+    
+    <img  id="angoor" src="angoor.png"/>
+    
+    </div>
+    
+    
+    
+    
+    
+    <script>
+        
+document.getElementById("icon").onclick=function(){
+                                        
+var audio = new Audio("alif.mp3");
+audio.play();
+   
+                                            
+}
+
+
+
+function detectswipe(el,func) {
+  swipe_det = new Object();
+  swipe_det.sX = 0; swipe_det.sY = 0; swipe_det.eX = 0; swipe_det.eY = 0;
+  var min_x = 30;  //min x swipe for horizontal swipe
+  var max_x = 30;  //max x difference for vertical swipe
+  var min_y = 50;  //min y swipe for vertical swipe
+  var max_y = 60;  //max y difference for horizontal swipe
+  var direc = "";
+  ele = document.getElementById(el);
+  ele.addEventListener('touchstart',function(e){
+    var t = e.touches[0];
+    swipe_det.sX = t.screenX; 
+    swipe_det.sY = t.screenY;
+  },false);
+  ele.addEventListener('touchmove',function(e){
+    e.preventDefault();
+    var t = e.touches[0];
+    swipe_det.eX = t.screenX; 
+    swipe_det.eY = t.screenY;    
+  },false);
+  ele.addEventListener('touchend',function(e){
+    //horizontal detection
+    if ((((swipe_det.eX - min_x > swipe_det.sX) || (swipe_det.eX + min_x < swipe_det.sX)) && ((swipe_det.eY < swipe_det.sY + max_y) && (swipe_det.sY > swipe_det.eY - max_y) && (swipe_det.eX > 0)))) {
+      if(swipe_det.eX > swipe_det.sX) direc = "r";
+      else direc = "l";
+    }
+    //vertical detection
+    else if ((((swipe_det.eY - min_y > swipe_det.sY) || (swipe_det.eY + min_y < swipe_det.sY)) && ((swipe_det.eX < swipe_det.sX + max_x) && (swipe_det.sX > swipe_det.eX - max_x) && (swipe_det.eY > 0)))) {
+      if(swipe_det.eY > swipe_det.sY) direc = "d";
+      else direc = "u";
+    }
+
+    if (direc != "") {
+      if(typeof func == 'function') func(el,direc);
+    }
+    direc = "";
+    swipe_det.sX = 0; swipe_det.sY = 0; swipe_det.eX = 0; swipe_det.eY = 0;
+  },false);  
+}
+
+function myfunction(el,d) {
+  alert("you swiped on element with id '"+el+"' to "+d+" direction");
+}
+        
+
+            
+    detectswipe('an_element_id',myfunction);
+
+detectswipe('an_other_element_id',my_other_function);
+        
+    </script>
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+</html>
